@@ -1,0 +1,27 @@
+.span-recuadro{
+  border-radius: 30px;
+  width: 25em;
+  height: 3.75em;
+}
+
+.text-circle{
+  margin-top: -10px;
+}
+
+.activateCircle{
+  position: relative;
+  margin-left: 91%;
+  background-color: black;
+  color: white;
+  rotate: 360deg;
+  border: 1.5px solid cyan;
+}
+
+.activateBody{
+  opacity: 70%;
+}
+
+.style-span{
+  position: fixed;
+  margin-left: 8em;
+}

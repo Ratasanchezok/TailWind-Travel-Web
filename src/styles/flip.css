@@ -1,0 +1,53 @@
+.cardBox {
+  float: left;
+  font-size: 1.2em;
+  perspective: 800px;
+  transition: all 0.6s ease 0s;
+}
+
+.cardBox:hover .card {
+  transform: rotateY(180deg);
+}
+
+.card {
+  display: block;
+  background: #222;
+  height: 581px;
+  transform-style: preserve-3d;
+  transition: transform 0.4s ease 0s;
+  width: 100%;
+  -webkit-animation: giro 1s 1;
+  animation: giro 1.5s 1;
+  border-radius: 1rem;
+}
+
+.front, .back {
+  backface-visibility: hidden;
+  box-sizing: border-box;
+  color: white;
+  display: block;
+  font-size: 1.2em;
+  height: 581px;
+  text-align: center;
+  width: 100%;
+  border-radius: 1rem;
+}
+
+.card .back {
+  transform: rotateY( 180deg);
+  background-color: #222;
+  opacity: .7;
+  position: relative;
+  top: -106%;
+}
+
+@keyframes giro {
+  from {
+    transform: rotateY( 180deg);
+  }
+  to {
+    transform: rotateY( 0deg);
+  }
+}
+
+

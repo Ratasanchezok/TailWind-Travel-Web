@@ -1,0 +1,67 @@
+/* Insert Font */
+@import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
+
+/* Border Color */
+:root{
+  --all-color: yellow;
+  --jungle-color: yellow;
+  --all-color: yellow;
+  --all-color: yellow;
+  --all-color: yellow;
+}
+
+.lista button{
+  border-bottom: 1px solid cyan;
+  border-right: 1px solid cyan;
+  padding: 0.3rem;
+  border-radius: 10%;
+  transition: 1.6s;
+  font-weight: 500;
+}
+
+.lista button:hover{
+  border-top: 1px solid black;
+  padding: 0.3rem;
+  border-radius: 10%;
+  border-bottom: 0px;
+  border-right: 0px;
+  transform: scale(1.2);
+  position: relative;
+}
+
+@counter-style emoji{
+  system: cyclic;
+  symbols: '🌎' '🏕' '🏖' '🌄' '🏙';
+  suffix:'';
+}
+
+.div-delista ul{
+  list-style: emoji;
+}
+
+.list-places li{
+  display: grid;
+  justify-content: space-around;
+  color: white;
+  opacity: 100;
+}
+
+.list-places li:nth-child(4){
+  margin-bottom: 30px;
+}
+
+.list-places li:hover{
+  color: cyan;
+}
+
+.list-places{
+  width: 100%;
+  height: 100%;
+}
+
+.hr-styles{
+    background: linear-gradient(to right, red, yellow);
+    height: 3px;
+    width: 80%;
+    margin: 0 auto;
+}
