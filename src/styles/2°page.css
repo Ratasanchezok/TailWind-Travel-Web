@@ -1,16 +1,7 @@
 /* Insert Font */
 @import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
 
-/* Border Color */
-:root{
-  --all-color: yellow;
-  --jungle-color: yellow;
-  --all-color: yellow;
-  --all-color: yellow;
-  --all-color: yellow;
-}
-
-.lista button{
+.lista button {
   border-bottom: 1px solid cyan;
   border-right: 1px solid cyan;
   padding: 0.3rem;
@@ -19,7 +10,7 @@
   font-weight: 500;
 }
 
-.lista button:hover{
+.lista button:hover {
   border-top: 1px solid black;
   padding: 0.3rem;
   border-radius: 10%;
@@ -29,39 +20,140 @@
   position: relative;
 }
 
-@counter-style emoji{
+@counter-style emoji {
   system: cyclic;
   symbols: '🌎' '🏕' '🏖' '🌄' '🏙';
-  suffix:'';
+  suffix: '';
 }
 
-.div-delista ul{
+.div-delista ul {
   list-style: emoji;
+  
 }
 
-.list-places li{
-  display: grid;
-  justify-content: space-around;
+.list-places li {
   color: white;
   opacity: 100;
+  margin: 0 auto;
 }
 
-.list-places li:nth-child(4){
+.list-places li:nth-child(4) {
   margin-bottom: 30px;
 }
 
-.list-places li:hover{
+.list-places li:hover {
   color: cyan;
 }
 
-.list-places{
+.list-places {
   width: 100%;
-  height: 100%;
 }
 
-.hr-styles{
-    background: linear-gradient(to right, red, yellow);
-    height: 3px;
-    width: 80%;
-    margin: 0 auto;
+.hr-styles {
+  background: linear-gradient(to right, red, yellow);
+  height: 3px;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.img-dest1 {
+  transition: 1s;
+}
+
+.img-dest1:nth-child(1):hover {
+  rotate: 360deg;
+}
+
+.clasificacion input {
+  display: none;
+}
+
+.clasificacion label {
+  color: grey;
+}
+
+.clasificacion label:hover {
+  color: orange;
+}
+
+input[type='radio']:checked ~ label {
+  color: orange;
+}
+
+.clasificacion {
+  direction: rtl;
+  unicode-bidi: bidi-override;
+}
+
+.divName {
+  transition: 800ms;
+}
+
+.activeName {
+  position: relative;
+  width: 30px;
+  border-radius: 50%;
+  animation: saveName 3s linear;
+}
+
+.activeName::-moz-placeholder {
+  color: transparent;
+}
+
+.activeStars {
+  width: 30px;
+  border-radius: 50%;
+  height: 30px;
+}
+
+.activeStars label {
+  opacity: 0; 
+}
+
+.divStars, .divText{
+  transition: 1s;
+}
+
+.activeText {
+  width: 30px;
+  border-radius: 50%;
+  height: 30px;
+  margin-top: 40px;
+  margin-left: -34px;
+  resize: none;
+}
+
+.activeText::-moz-placeholder {
+  color: transparent;
+}
+
+.flyAway {
+  transition-duration: 3s;
+  transition-delay: 1s;
+}
+
+.activeFly {
+  position: relative;
+  rotate: 43deg;
+  animation: flyflyaway 7s normal;
+  animation-delay: 3s;
+}
+
+@keyframes flyflyaway {
+  0% {
+    left: 0;
+  }
+  10% {
+    top: 10px;
+    rotate: 45deg;
+  }
+  20% {
+    bottom: 10px;
+  }
+  30% {
+    bottom: 10px;
+  }
+  100% {
+    left: 100%;
+  }
 }

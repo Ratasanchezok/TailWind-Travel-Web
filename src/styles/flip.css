@@ -2,17 +2,14 @@
   float: left;
   font-size: 1.2em;
   perspective: 800px;
-  transition: all 0.6s ease 0s;
+  transition: all 0.8s ease 0s;
 }
 
-.cardBox:hover .card {
-  transform: rotateY(180deg);
-}
+
 
 .card {
   display: block;
-  background: #222;
-  height: 581px;
+  max-height: 581px;
   transform-style: preserve-3d;
   transition: transform 0.4s ease 0s;
   width: 100%;
@@ -21,33 +18,39 @@
   border-radius: 1rem;
 }
 
-.front, .back {
+.front,
+.back {
   backface-visibility: hidden;
   box-sizing: border-box;
   color: white;
-  display: block;
   font-size: 1.2em;
-  height: 581px;
+  max-height: 581px;
   text-align: center;
   width: 100%;
   border-radius: 1rem;
 }
 
 .card .back {
-  transform: rotateY( 180deg);
-  background-color: #222;
-  opacity: .7;
-  position: relative;
-  top: -106%;
+  transform: rotateY(0deg);
+  background-color: rgb(75, 75, 75, 0.6);
+  position: absolute;
+  top: 0;
 }
 
 @keyframes giro {
   from {
-    transform: rotateY( 180deg);
+    transform: rotateY(180deg);
   }
   to {
-    transform: rotateY( 0deg);
+    transform: rotateY(0deg);
   }
 }
 
-
+@media (min-width: 1024px) {
+  .cardBox:hover .card {
+    transform: rotateY(180deg);
+  }
+  .card .back{
+    transform: rotateY(180deg);
+  }
+}

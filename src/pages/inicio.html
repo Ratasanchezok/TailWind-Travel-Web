@@ -20,7 +20,7 @@
 
   <!--Body-->
   <body
-    class="w-screen p-0 m-0 overflow-x-hidden bg-gradient-to-r from-green-300 via-sky-300 to-yellow-300"
+    class="w-screen h-full p-0 m-0 overflow-x-hidden bg-gradient-to-r from-green-300 via-sky-300 to-yellow-300"
   >
     <!--NavBar-->
     <header
@@ -55,30 +55,36 @@
       </ul>
     </div>
     <!--Placements Images with Animation-->
-    <div class="w-full h-auto mt-20 flex justify-evenly boxesContainer">
+    <div
+      class="h-auto mt-20 flex lg:justify-evenly boxesContainer space-y-8 lg:space-y-0 flex-col lg:flex-row lg:space-x-8 mx-auto w-11/12 overflow-hidden"
+    >
       <!-- Carta 1 -->
 
-      <div class="cardBox">
-        <div id="card1" class="card h-auto">
-          <div class="my-9 front">
-            <button>
-              <img src="/public/img/desert.avif" alt="" class="rounded-2xl" />
+      <div class="cardBox lg:w-1/3 relative">
+        <div id="card1" class="card h-full">
+          <div class="front h-full">
+            <button class="w-full h-full max-h-[581px]">
+              <img
+                src="/public/img/desert.avif"
+                alt=""
+                class="rounded-2xl w-full h-full object-cover max-h-[581px]"
+              />
             </button>
           </div>
 
-          <div class="back">
+          <div class="back inset-0 flex flex-col">
             <h1 class="text-4xl">Desert</h1>
             <p class="text-2xl">Principales Lugares</p>
             <hr class="hr-styles" />
             <ul
-              class="grid align-middle list-places -mt-5 w-full"
+              class="list-places w-full flex-auto flex flex-col justify-between"
               id="list-places"
             >
               <li>
-                <button onclick="dropdown_function()">
+                <button id="atacama_button" class="dropdown-button">
                   Desierto de Atacama
                 </button>
-                <div id="myDIV" class="grid-cols-2 hidden hover-dropdown">
+                <div id="atacama" class="grid-cols-2 hidden hover-dropdown">
                   <a
                     href="https://www.google.com.ar/maps/place/Atacama+Desert/@-23.8633986,-69.1416039,15z/data=!3m1!4b1!4m5!3m4!1s0x96af46527fef1c47:0x34dbbb7aa8223dc!8m2!3d-23.8634189!4d-69.1328491"
                     target="_blank"
@@ -96,11 +102,11 @@
               </li>
 
               <li>
-                <button onclick="dropdown_function2()">
+                <button id="sahara_button" class="dropdown-button">
                   Desierto del Sáhara
                 </button>
                 <div
-                  id="myDIV2"
+                  id="sahara"
                   class="grid-cols-2 hidden hover-dropdown transition duration-700"
                 >
                   <a
@@ -120,10 +126,10 @@
               </li>
 
               <li>
-                <button onclick="dropdown_function3()">
+                <button id="uyuni_button" class="dropdown-button">
                   Desierto de Uyuni
                 </button>
-                <div id="myDIV3" class="grid-cols-2 hidden hover-dropdown">
+                <div id="uyuni" class="grid-cols-2 hidden hover-dropdown">
                   <a
                     href="https://www.google.com.ar/maps/place/Uyuni+Salt+Flat/@-20.19362,-69.762403,8z/data=!3m1!4b1!4m5!3m4!1s0x915584b325e18bd7:0xce4183a158278b6!8m2!3d-20.1337772!4d-67.4891345"
                     target="_blank"
@@ -141,8 +147,10 @@
               </li>
 
               <li>
-                <button onclick="dropdown_function4()">Desierto de Lut</button>
-                <div id="myDIV4" class="grid-cols-2 hidden hover-dropdown">
+                <button id="lut_button" class="dropdown-button">
+                  Desierto de Lut
+                </button>
+                <div id="lut" class="grid-cols-2 hidden hover-dropdown">
                   <a
                     href="https://www.google.com.ar/maps/place/Lut+Desert/@32.4747705,55.1130219,7z/data=!4m9!1m2!2m1!1slut+desert!3m5!1s0x3f1d5113ac2fce6f:0x73f9d7e9c4c9843b!8m2!3d30.4865139!4d58.4891939!15sCgpsdXQgZGVzZXJ0WgwiCmx1dCBkZXNlcnSSAQtzY2VuaWNfc3BvdJoBJENoZERTVWhOTUc5blMwVkpRMEZuU1VSdk5EVm1PR2gzUlJBQuABAA"
                     target="_blank"
@@ -169,48 +177,227 @@
 
       <!-- Carta 2 -->
 
-      <div class="cardBox">
-        <div id="card1" class="card">
-          <div class="my-9 front">
-            <button>
-              <img src="/public/img/bridge.avif" alt="" class="rounded-2xl" />
+      <div class="cardBox lg:w-1/3 relative">
+        <div id="card1" class="card h-full">
+          <div class="front h-full">
+            <button class="w-full h-full max-h-[581px]">
+              <img
+                src="/public/img/bridge.avif"
+                alt=""
+                class="rounded-2xl w-full h-full object-cover max-h-[581px]"
+              />
             </button>
           </div>
 
-          <div class="back">
-            <h1>Mountain</h1>
-            <ul>
-              <li><button>Desierto de Atacama</button></li>
-              <li><button>Desierto del Sáhara</button></li>
-              <li><button>Desierto de Uyuni</button></li>
-              <li><button>Desierto de Lut</button></li>
-              <li><button>Desierto Antártico</button></li>
+          <div class="back inset-0 flex flex-col">
+            <h1 class="text-4xl">Desert</h1>
+            <p class="text-2xl">Principales Lugares</p>
+            <hr class="hr-styles" />
+            <ul
+              class="list-places w-full flex-auto flex-col justify-between flex"
+              id="list-places"
+            >
+              <li>
+                <button id="atacama_button" class="dropdown-button">
+                  Desierto de Atacama
+                </button>
+                <div id="atacama" class="grid-cols-2 hidden hover-dropdown">
+                  <a
+                    href="https://www.google.com.ar/maps/place/Atacama+Desert/@-23.8633986,-69.1416039,15z/data=!3m1!4b1!4m5!3m4!1s0x96af46527fef1c47:0x34dbbb7aa8223dc!8m2!3d-23.8634189!4d-69.1328491"
+                    target="_blank"
+                    ><img
+                      src="http://1.bp.blogspot.com/-ZJP900lvUlY/VhMAr7LrcxI/AAAAAAAAXgg/0ObL8eT7oCA/s1600/Desierto%2Bde%2BAtacama.jpg"
+                      alt=""
+                      class="w-20 none rounded-2xl m-auto"
+                  /></a>
+                  <p class="max-w-sm text-xl text-white">
+                    La mayor parte del desierto está compuesto por terreno
+                    pedregoso, lagos salados (salares), arena y lava félsica que
+                    fluye hacia los Andes
+                  </p>
+                </div>
+              </li>
+
+              <li>
+                <button id="sahara_button" class="dropdown-button">
+                  Desierto del Sáhara
+                </button>
+                <div
+                  id="sahara"
+                  class="grid-cols-2 hidden hover-dropdown transition duration-700"
+                >
+                  <a
+                    href="https://www.google.com.ar/maps/place/Sahara+Desert/@21.9953015,13.0765287,5z/data=!3m1!4b1!4m5!3m4!1s0x13883b64fb267151:0xd6406bdc582d7390!8m2!3d23.4162027!4d25.66283"
+                    target="_blank"
+                    ><img
+                      src="https://images.unsplash.com/photo-1542916514-3e2119eefeb7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
+                      alt=""
+                      class="w-20 none rounded-2xl m-auto"
+                  /></a>
+                  <p class="max-w-sm text-xl text-white">
+                    El Sahara está delimitado al sur por el Sahel, una zona
+                    biogeográfica de 5,000 km que atraviesa el continente
+                    africano.
+                  </p>
+                </div>
+              </li>
+
+              <li>
+                <button id="uyuni_button" class="dropdown-button">
+                  Desierto de Uyuni
+                </button>
+                <div id="uyuni" class="grid-cols-2 hidden hover-dropdown">
+                  <a
+                    href="https://www.google.com.ar/maps/place/Uyuni+Salt+Flat/@-20.19362,-69.762403,8z/data=!3m1!4b1!4m5!3m4!1s0x915584b325e18bd7:0xce4183a158278b6!8m2!3d-20.1337772!4d-67.4891345"
+                    target="_blank"
+                    ><img
+                      src="https://images.unsplash.com/photo-1529801877115-8a69a227fcc0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
+                      alt=""
+                      class="w-20 none rounded-2xl m-auto"
+                  /></a>
+                  <p class="max-w-sm text-xl text-white">
+                    Antes de responder esta pregunta, hay que dejar claro que el
+                    Salar de Uyuni, propiamente, es el mayor desierto de sal de
+                    la Tierra.
+                  </p>
+                </div>
+              </li>
+
+              <li>
+                <button id="lut_button" class="dropdown-button">
+                  Desierto de Lut
+                </button>
+                <div id="lut" class="grid-cols-2 hidden hover-dropdown">
+                  <a
+                    href="https://www.google.com.ar/maps/place/Lut+Desert/@32.4747705,55.1130219,7z/data=!4m9!1m2!2m1!1slut+desert!3m5!1s0x3f1d5113ac2fce6f:0x73f9d7e9c4c9843b!8m2!3d30.4865139!4d58.4891939!15sCgpsdXQgZGVzZXJ0WgwiCmx1dCBkZXNlcnSSAQtzY2VuaWNfc3BvdJoBJENoZERTVWhOTUc5blMwVkpRMEZuU1VSdk5EVm1PR2gzUlJBQuABAA"
+                    target="_blank"
+                    ><img
+                      src="https://images.unsplash.com/photo-1509316785289-025f5b846b35?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGx1dCUyMGRlc2VydHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
+                      alt=""
+                      class="w-20 none rounded-2xl m-auto"
+                  /></a>
+                  <p class="max-w-sm text-xl text-white">
+                    Su nombre en persa es Dash-e-Loot, que quiere decir "el
+                    desierto del vacío". Y aunque en cuanto a tamaño ocupa el
+                    lugar número 25, en cuestión de temperaturas es el número
+                    uno.
+                  </p>
+                </div>
+              </li>
             </ul>
-            <p></p>
-            <a href=""></a>
-            <img src="" alt="" class="" />
           </div>
         </div>
       </div>
 
       <!-- Carta 3 -->
 
-      <div class="cardBox mr-3">
-        <div id="card1" class="card">
-          <div class="my-9 front">
-            <button>
-              <img src="/public/img/desert.avif" alt="" class="rounded-2xl" />
+      <div class="cardBox lg:w-1/3 relative">
+        <div id="card1" class="card h-full">
+          <div class="h-full front">
+            <button class="w-full h-full max-h-[581px]">
+              <img
+                src="/public/img/trees.avif"
+                alt=""
+                class="rounded-2xl w-full h-full object-cover max-h-[581px]"
+              />
             </button>
           </div>
 
-          <div class="back">
-            <h1>Desert</h1>
-            <ul>
-              <li><button>Desierto de Atacama</button></li>
-              <li><button>Desierto del Sáhara</button></li>
-              <li><button>Desierto de Uyuni</button></li>
-              <li><button>Desierto de Lut</button></li>
-              <li><button>Desierto Antártico</button></li>
+          <div class="back inset-0 flex flex-col">
+            <h1 class="text-4xl">Desert</h1>
+            <p class="text-2xl">Principales Lugares</p>
+            <hr class="hr-styles" />
+            <ul
+              class="flex-auto flex-col justify-between flex list-places w-full"
+              id="list-places"
+            >
+              <li>
+                <button id="atacama_button" class="dropdown-button">
+                  Desierto de Atacama
+                </button>
+                <div id="atacama" class="grid-cols-2 hidden hover-dropdown">
+                  <a
+                    href="https://www.google.com.ar/maps/place/Atacama+Desert/@-23.8633986,-69.1416039,15z/data=!3m1!4b1!4m5!3m4!1s0x96af46527fef1c47:0x34dbbb7aa8223dc!8m2!3d-23.8634189!4d-69.1328491"
+                    target="_blank"
+                    ><img
+                      src="http://1.bp.blogspot.com/-ZJP900lvUlY/VhMAr7LrcxI/AAAAAAAAXgg/0ObL8eT7oCA/s1600/Desierto%2Bde%2BAtacama.jpg"
+                      alt=""
+                      class="w-20 none rounded-2xl m-auto"
+                  /></a>
+                  <p class="max-w-sm text-xl text-white">
+                    La mayor parte del desierto está compuesto por terreno
+                    pedregoso, lagos salados (salares), arena y lava félsica que
+                    fluye hacia los Andes
+                  </p>
+                </div>
+              </li>
+
+              <li>
+                <button id="sahara_button" class="dropdown-button">
+                  Desierto del Sáhara
+                </button>
+                <div
+                  id="sahara"
+                  class="grid-cols-2 hidden hover-dropdown transition duration-700"
+                >
+                  <a
+                    href="https://www.google.com.ar/maps/place/Sahara+Desert/@21.9953015,13.0765287,5z/data=!3m1!4b1!4m5!3m4!1s0x13883b64fb267151:0xd6406bdc582d7390!8m2!3d23.4162027!4d25.66283"
+                    target="_blank"
+                    ><img
+                      src="https://images.unsplash.com/photo-1542916514-3e2119eefeb7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
+                      alt=""
+                      class="w-20 none rounded-2xl m-auto"
+                  /></a>
+                  <p class="max-w-sm text-xl text-white">
+                    El Sahara está delimitado al sur por el Sahel, una zona
+                    biogeográfica de 5,000 km que atraviesa el continente
+                    africano.
+                  </p>
+                </div>
+              </li>
+
+              <li>
+                <button id="uyuni_button" class="dropdown-button">
+                  Desierto de Uyuni
+                </button>
+                <div id="uyuni" class="grid-cols-2 hidden hover-dropdown">
+                  <a
+                    href="https://www.google.com.ar/maps/place/Uyuni+Salt+Flat/@-20.19362,-69.762403,8z/data=!3m1!4b1!4m5!3m4!1s0x915584b325e18bd7:0xce4183a158278b6!8m2!3d-20.1337772!4d-67.4891345"
+                    target="_blank"
+                    ><img
+                      src="https://images.unsplash.com/photo-1529801877115-8a69a227fcc0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
+                      alt=""
+                      class="w-20 none rounded-2xl m-auto"
+                  /></a>
+                  <p class="max-w-sm text-xl text-white">
+                    Antes de responder esta pregunta, hay que dejar claro que el
+                    Salar de Uyuni, propiamente, es el mayor desierto de sal de
+                    la Tierra.
+                  </p>
+                </div>
+              </li>
+
+              <li>
+                <button id="lut_button" class="dropdown-button">
+                  Desierto de Lut
+                </button>
+                <div id="lut" class="grid-cols-2 hidden hover-dropdown">
+                  <a
+                    href="https://www.google.com.ar/maps/place/Lut+Desert/@32.4747705,55.1130219,7z/data=!4m9!1m2!2m1!1slut+desert!3m5!1s0x3f1d5113ac2fce6f:0x73f9d7e9c4c9843b!8m2!3d30.4865139!4d58.4891939!15sCgpsdXQgZGVzZXJ0WgwiCmx1dCBkZXNlcnSSAQtzY2VuaWNfc3BvdJoBJENoZERTVWhOTUc5blMwVkpRMEZuU1VSdk5EVm1PR2gzUlJBQuABAA"
+                    target="_blank"
+                    ><img
+                      src="https://images.unsplash.com/photo-1509316785289-025f5b846b35?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGx1dCUyMGRlc2VydHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
+                      alt=""
+                      class="w-20 none rounded-2xl m-auto"
+                  /></a>
+                  <p class="max-w-sm text-xl text-white">
+                    Su nombre en persa es Dash-e-Loot, que quiere decir "el
+                    desierto del vacío". Y aunque en cuanto a tamaño ocupa el
+                    lugar número 25, en cuestión de temperaturas es el número
+                    uno.
+                  </p>
+                </div>
+              </li>
             </ul>
             <p></p>
             <a href=""></a>
@@ -219,39 +406,134 @@
         </div>
       </div>
     </div>
+    <hr class="mt-8 w-28 mx-auto border-2 border-blue-500" />
 
-    <h1></h1>
-    <div>
-      <div>
-        <div>
-          <img src="" alt="" />
+    <div class="mt-8">
+      <h1 class="text-3xl text-center">Top Destinations</h1>
+      <div class="flex-col flex lg:justify-around mt-12 lg:flex-row items-center space-y-8 lg:space-y-0">
+        <!-- Top Destination 1 -->
+        <div
+          class="w-60 h-16 bg-slate-400 rounded-2xl justify-start flex lg:scale-150 destination-1 cursor-pointer"
+        >
+          <div class="w-24 img-dest1">
+            <img
+              src="https://images.unsplash.com/photo-1504858700536-882c978a3464?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
+              alt=""
+              class="rounded-2xl"
+            />
+          </div>
+          <div class="ml-3 mt-2">
+            <p class="font-black">Reykjanes</p>
+            <p>Boreal</p>
+          </div>
         </div>
-        <div>
-          <p></p>
-          <p></p>
-        </div>
-      </div>
 
-      <div>
-        <div>
-          <img src="" alt="" />
+        <!-- Top Destination 2 -->
+        <div
+          class="w-60 h-16 bg-slate-400 rounded-2xl justify-start flex lg:scale-150 destination-1 cursor-pointer"
+        >
+          <div class="w-28 h-auto img-dest1">
+            <img
+              src="https://images.unsplash.com/photo-1574866412308-32d9023633dd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1031&q=80"
+              alt=""
+              class="rounded-2xl"
+            />
+          </div>
+          <div class="ml-3 mt-2">
+            <p class="font-black">Alaska</p>
+            <p>Mountains</p>
+          </div>
         </div>
-        <div>
-          <p></p>
-          <p></p>
-        </div>
-      </div>
 
-      <div>
-        <div>
-          <img src="" alt="" />
-        </div>
-        <div>
-          <p></p>
-          <p></p>
+        <!-- Top Destination 3 -->
+        <div
+          class="w-60 h-16 bg-slate-400 rounded-2xl justify-start flex lg:scale-150 destination-1 cursor-pointer"
+        >
+          <div class="w-24 img-dest1">
+            <img
+              src="https://images.unsplash.com/photo-1531332763073-e0f5f214c673?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8cGFpbmV8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
+              alt=""
+              class="rounded-2xl"
+            />
+          </div>
+          <div class="ml-3 mt-2">
+            <p class="font-black">Chile</p>
+            <p>Paine Towers</p>
+          </div>
         </div>
       </div>
     </div>
-    <script src="/src/js/app.js"></script>
+
+    <!-- Send Review -->
+
+    <h1 class="text-4xl mt-10 text-center animate-pulse">Send rewiev</h1>
+    <footer class="mt-10 w-11/12 mx-auto overflow-x-hidden">
+      <div class="flex w-20 justify-start flyAway" id="flyAway">
+        <img src="/public/svg/fly.svg" alt="" class="" />
+      </div>
+      <form
+        class="max-w-[384px]"
+        id="divForm"
+        action="mailto:tomasgonzalosanchez1@gmail.com"
+      >
+        <input
+          id="divName"
+          type="text"
+          class="w-full h-auto rounded-2xl align-top p-1 divName"
+          maxlength="100"
+          placeholder="Your Name!"
+        />
+        <textarea
+          name=""
+          id="divText"
+          cols="30"
+          rows="10"
+          class="w-full h-auto rounded-2xl mt-3 p-1 divText"
+          placeholder="This site is amazing!"
+        ></textarea>
+
+        <div class="bg-white rounded-2xl mt-2 divStars w-full" id="divStars">
+          <div class="clasificacion flex justify-evenly divStars">
+            <input id="radio1" type="radio" name="estrellas" value="5" /><!--
+            --><label for="radio1">★</label
+            ><!--
+            --><input id="radio2" type="radio" name="estrellas" value="4" /><!--
+            --><label for="radio2">★</label
+            ><!--
+            --><input id="radio3" type="radio" name="estrellas" value="3" /><!--
+            --><label for="radio3">★</label
+            ><!--
+            --><input id="radio4" type="radio" name="estrellas" value="2" /><!--
+            --><label for="radio4">★</label
+            ><!--
+            --><input id="radio5" type="radio" name="estrellas" value="1" /><!--
+            --><label for="radio5">★</label>
+          </div>
+        </div>
+        <div class="p-8 flex justify-evenly max-w-96">
+          <button
+            class="bg-green-400 rounded-2xl p-2 w-14"
+            type="submit"
+            id="sendButton"
+          >
+            <img src="/public/svg/send.svg" alt="" />
+          </button>
+          <button
+            class="bg-red-300 rounded-2xl p-2 w-14"
+            type="reset"
+            id="cleanButton"
+          >
+            <img src="/public/svg/trash.svg" alt="" />
+          </button>
+        </div>
+      </form>
+    </footer>
+
+    <p class="max-w-96 text-center mx-auto mb-3 text-xl">
+      The HTML and JS code as well as the CSS and FIGMA design were written and
+      designed by Tomas Sanchez.
+    </p>
+
+    <script src="/src/js/start.js"></script>
   </body>
 </html>
