@@ -1,9 +1,13 @@
 /* Insert Font */
 @import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=The+Girl+Next+Door&display=swap');
 
+html body{
+  font-family: 'The Girl Next Door', cursive;
+  height: 100vh;
+  width: 100vw;
+}
 .lista button {
-  border-bottom: 1px solid cyan;
-  border-right: 1px solid cyan;
   padding: 0.3rem;
   border-radius: 10%;
   transition: 1.6s;
@@ -11,24 +15,24 @@
 }
 
 .lista button:hover {
-  border-top: 1px solid black;
   padding: 0.3rem;
   border-radius: 10%;
   border-bottom: 0px;
   border-right: 0px;
-  transform: scale(1.2);
   position: relative;
+  animation: earthquake linear 3s;
+  position: relative;
+  transform: rotateY(20deg);
 }
 
-@counter-style emoji {
-  system: cyclic;
-  symbols: '🌎' '🏕' '🏖' '🌄' '🏙';
-  suffix: '';
-}
-
-.div-delista ul {
-  list-style: emoji;
-  
+.lista button:hover::after {
+  width: 30px;
+    height: 100%;
+    display: flex;
+    content: "->";
+    position: absolute;
+    left: -23px;
+    top: 3px;
 }
 
 .list-places li {
@@ -93,7 +97,8 @@ input[type='radio']:checked ~ label {
   position: relative;
   width: 30px;
   border-radius: 50%;
-  animation: saveName 3s linear;
+  animation: ghost 7s normal;
+  animation-delay: 1s;
 }
 
 .activeName::-moz-placeholder {
@@ -104,6 +109,8 @@ input[type='radio']:checked ~ label {
   width: 30px;
   border-radius: 50%;
   height: 30px;
+  animation: ghost 7s normal;
+  animation-delay: 1.5s;
 }
 
 .activeStars label {
@@ -121,6 +128,8 @@ input[type='radio']:checked ~ label {
   margin-top: 40px;
   margin-left: -34px;
   resize: none;
+  animation: ghost 7s normal;
+  animation-delay: 1s;
 }
 
 .activeText::-moz-placeholder {
@@ -135,25 +144,145 @@ input[type='radio']:checked ~ label {
 .activeFly {
   position: relative;
   rotate: 43deg;
-  animation: flyflyaway 7s normal;
-  animation-delay: 3s;
+  animation: flyflyaway 6s normal;
+  animation-delay: 3.5s;
 }
 
+
+
 @keyframes flyflyaway {
-  0% {
+  0%{
     left: 0;
+    top: 0;
   }
-  10% {
-    top: 10px;
-    rotate: 45deg;
+  30%{
+    top: 100px;
   }
-  20% {
-    bottom: 10px;
+  45%{
+    top: -100px;
   }
-  30% {
-    bottom: 10px;
+  60%{
+    scale: 1.5;
+    rotate: 50deg Y;
+    top: -400px;
   }
-  100% {
-    left: 100%;
+  100%{
+    left: 2000px;
   }
-}
+  }
+
+  @keyframes ghost{
+    0%{
+      opacity: 1;
+    }
+    25%{
+      opacity: 0.4;
+    }
+    50%{
+      opacity: 0;
+    }
+    100%{
+      opacity: 0;
+    }
+  }
+
+  /* Hamburguer style */
+  .bars__menu {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    justify-content: center;
+    transform: rotateX(0deg);
+    transform: translateY(-0%);
+    margin: 10px 0px;
+    transition: 2s;
+  }
+  
+  .bars__menu span {
+    display: flex;
+    width: 100%;
+    height: 2px;
+    background-color: black;
+    margin-top: 8px;
+    transform-origin: 0px 100%;
+  }
+
+  .bars__menu :nth-child(odd){
+    margin-left: -8px;
+    transform: rotate(30deg);
+  }
+
+  .bars__menu :nth-child(even){
+    margin-left: 8px;
+    transform: rotate(-30deg); 
+  }
+
+  .destination-1::after{
+    width: 30px;
+    height: 100%;
+    background-color: rgb(177, 130, 130);
+    display: flex;
+    content: "";
+    position: absolute;
+    right: 0%;
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    cursor: pointer;
+  }
+
+  .destination-1::after{
+    content: "⬇";
+    justify-content: center;
+    align-items: center;
+    color: white;
+  }
+
+  @keyframes earthquake {
+    10%, 90% {
+      transform: translate3d(-2px, 0, 0);
+    }
+    
+    20%, 80% {
+      transform: translate3d(4px, 4px, 4px);
+    }
+  
+    30%, 50%, 70% {
+      transform: translate3d(-8px, 8px, -4px);
+    }
+  
+    40%, 60% {
+      transform: translate3d(8px, -8px, -8px);
+    }
+  }
+
+  @media (min-width: 650px) {
+    .hamburguers{
+      display: none;
+    }
+  }
+
+  @media (max-width: 650px) {
+
+    .lista{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 100%;
+      margin: 20px 0 0 0px;
+      transition: 3s;
+      border: white solid 1px;
+      border-radius: 50%;
+    }
+
+    .activeDivLista{
+      margin-top: -270px;
+      opacity: 0;
+    }
+
+    .activeArrow{
+      transform: rotate(180deg);
+      margin-top: 30px;
+    }
+  }
+
+ 

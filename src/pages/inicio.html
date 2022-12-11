@@ -15,38 +15,30 @@
       href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=The+Girl+Next+Door&display=swap"
+      rel="stylesheet"
+    />
     <title>Travel-Web</title>
   </head>
 
   <!--Body-->
   <body
-    class="w-screen h-full p-0 m-0 overflow-x-hidden bg-gradient-to-r from-green-300 via-sky-300 to-yellow-300"
+    class="w-screen h-screen p-0 m-0 overflow-x-hidden bg-gradient-to-r from-green-300 via-sky-300 to-yellow-300"
   >
-    <!--NavBar-->
-    <header
-      class="w-screen h-12 inline-flex border-b border-black -top-1 z-10 header-styles sticky bg-slate-200"
-    >
-      <nav class="flex justify-between mx-4 w-full">
-        <div class="flex text-center">
-          <h1 class="text-4xl justify-center">Discover</h1>
-        </div>
-        <div class="flex justify-around w-28">
-          <button class="">
-            <img src="/public/svg/Bell.svg" alt="" class="w-6 aspect-square" />
-          </button>
-          <button class="">
-            <img
-              src="/public/svg/Search.svg"
-              alt=""
-              class="w-5 aspect-square"
-            />
-          </button>
-        </div>
-      </nav>
-    </header>
+    <!--Hamburguer-->
+    <div class="w-screen flex justify-center hamburguers">
+      <div class="bars__menu mx-0" id="button-hamburguer">
+        <span class="lineEven__bars-menu"></span>
+        <span class="lineOdd__bars-menu"></span>
+        <span class="lineEven__bars-menu"></span>
+        <span class="lineOdd__bars-menu"></span>
+      </div>
+    </div>
+
     <!--Select Place-->
-    <div class="w-11/12 mx-auto div-delista">
-      <ul class="flex justify-between mx-8 mt-10 text-2xl lista">
+    <div class="w-11/12 mx-auto div-delista h-auto">
+      <ul class="flex justify-between mx-8 mt-10 text-3xl lista" id="divUl">
         <li><button>All</button></li>
         <li><button>Jungle</button></li>
         <li><button>Beach</button></li>
@@ -54,9 +46,10 @@
         <li><button>City</button></li>
       </ul>
     </div>
+
     <!--Placements Images with Animation-->
     <div
-      class="h-auto mt-20 flex lg:justify-evenly boxesContainer space-y-8 lg:space-y-0 flex-col lg:flex-row lg:space-x-8 mx-auto w-11/12 overflow-hidden"
+      class="h-auto mt-12 flex lg:justify-evenly boxesContainer space-y-8 lg:space-y-0 flex-col lg:flex-row lg:space-x-8 mx-auto w-11/12 overflow-hidden p-4"
     >
       <!-- Carta 1 -->
 
@@ -73,7 +66,7 @@
           </div>
 
           <div class="back inset-0 flex flex-col">
-            <h1 class="text-4xl">Desert</h1>
+            <h1 class="text-4xl mb-1">Desert</h1>
             <p class="text-2xl">Principales Lugares</p>
             <hr class="hr-styles" />
             <ul
@@ -190,7 +183,7 @@
           </div>
 
           <div class="back inset-0 flex flex-col">
-            <h1 class="text-4xl">Desert</h1>
+            <h1 class="text-4xl mb-1">Mountains</h1>
             <p class="text-2xl">Principales Lugares</p>
             <hr class="hr-styles" />
             <ul
@@ -199,88 +192,85 @@
             >
               <li>
                 <button id="atacama_button" class="dropdown-button">
-                  Desierto de Atacama
+                  Mount Everest
                 </button>
                 <div id="atacama" class="grid-cols-2 hidden hover-dropdown">
                   <a
-                    href="https://www.google.com.ar/maps/place/Atacama+Desert/@-23.8633986,-69.1416039,15z/data=!3m1!4b1!4m5!3m4!1s0x96af46527fef1c47:0x34dbbb7aa8223dc!8m2!3d-23.8634189!4d-69.1328491"
+                    href="https://www.google.com.ar/maps/place/Mt+Everest/@27.9881387,86.9146753,15z/data=!3m1!4b1!4m5!3m4!1s0x39e854a215bd9ebd:0x576dcf806abbab2!8m2!3d27.9881206!4d86.9249751"
                     target="_blank"
                     ><img
-                      src="http://1.bp.blogspot.com/-ZJP900lvUlY/VhMAr7LrcxI/AAAAAAAAXgg/0ObL8eT7oCA/s1600/Desierto%2Bde%2BAtacama.jpg"
+                      src="https://cdn.mos.cms.futurecdn.net/D9bzCVeZLHQnZ6bUWvAkrW.jpg"
                       alt=""
                       class="w-20 none rounded-2xl m-auto"
                   /></a>
                   <p class="max-w-sm text-xl text-white">
-                    La mayor parte del desierto está compuesto por terreno
-                    pedregoso, lagos salados (salares), arena y lava félsica que
-                    fluye hacia los Andes
+                    El monte Everest es la montaña más alta de la superficie del
+                    planeta Tierra, nota con una altitud de 8848 metros (29 029
+                    pies) sobre el nivel del mar
                   </p>
                 </div>
               </li>
 
               <li>
                 <button id="sahara_button" class="dropdown-button">
-                  Desierto del Sáhara
+                  Matterhorn
                 </button>
                 <div
                   id="sahara"
                   class="grid-cols-2 hidden hover-dropdown transition duration-700"
                 >
                   <a
-                    href="https://www.google.com.ar/maps/place/Sahara+Desert/@21.9953015,13.0765287,5z/data=!3m1!4b1!4m5!3m4!1s0x13883b64fb267151:0xd6406bdc582d7390!8m2!3d23.4162027!4d25.66283"
+                    href="https://www.google.com.ar/maps/place/Matterhorn/@45.9765877,7.6481522,15z/data=!3m1!4b1!4m5!3m4!1s0x478f3368cbb9ecd9:0x9826458cace55849!8m2!3d45.9765738!4d7.6584519"
                     target="_blank"
                     ><img
-                      src="https://images.unsplash.com/photo-1542916514-3e2119eefeb7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
+                      src="https://images.unsplash.com/photo-1545161296-d9c2c241f2ad?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
                       alt=""
                       class="w-20 none rounded-2xl m-auto"
                   /></a>
                   <p class="max-w-sm text-xl text-white">
-                    El Sahara está delimitado al sur por el Sahel, una zona
-                    biogeográfica de 5,000 km que atraviesa el continente
-                    africano.
+                    El monte Cervino, Matterhorn o Mont Cervin es posiblemente
+                    la montaña más famosa de los Alpes por su espectacular forma
+                    de pirámide, muchas veces reproducida.
                   </p>
                 </div>
               </li>
 
               <li>
                 <button id="uyuni_button" class="dropdown-button">
-                  Desierto de Uyuni
+                  Cerro Torre
                 </button>
                 <div id="uyuni" class="grid-cols-2 hidden hover-dropdown">
                   <a
-                    href="https://www.google.com.ar/maps/place/Uyuni+Salt+Flat/@-20.19362,-69.762403,8z/data=!3m1!4b1!4m5!3m4!1s0x915584b325e18bd7:0xce4183a158278b6!8m2!3d-20.1337772!4d-67.4891345"
+                    href="https://www.google.com.ar/maps/place/Cerro+Torre/@-49.2930709,-73.1082195,15z/data=!3m1!4b1!4m5!3m4!1s0xbdbd1a5ca3cea471:0xea66ea4da2e08fc9!8m2!3d-49.2930859!4d-73.0979198"
                     target="_blank"
                     ><img
-                      src="https://images.unsplash.com/photo-1529801877115-8a69a227fcc0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
+                      src="https://images.unsplash.com/photo-1606261159324-e6d0e11d1964?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8Y2Vycm8lMjB0b3JyZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
                       alt=""
                       class="w-20 none rounded-2xl m-auto"
                   /></a>
                   <p class="max-w-sm text-xl text-white">
-                    Antes de responder esta pregunta, hay que dejar claro que el
-                    Salar de Uyuni, propiamente, es el mayor desierto de sal de
-                    la Tierra.
+                    El cerro Torre es una montaña de 3133 msnm ubicada en el
+                    borde oriental del campo de hielo Patagónico Sur en el sur
+                    de la Patagonia, parte austral de América del Sur
                   </p>
                 </div>
               </li>
 
               <li>
-                <button id="lut_button" class="dropdown-button">
-                  Desierto de Lut
-                </button>
+                <button id="lut_button" class="dropdown-button">K2</button>
                 <div id="lut" class="grid-cols-2 hidden hover-dropdown">
                   <a
-                    href="https://www.google.com.ar/maps/place/Lut+Desert/@32.4747705,55.1130219,7z/data=!4m9!1m2!2m1!1slut+desert!3m5!1s0x3f1d5113ac2fce6f:0x73f9d7e9c4c9843b!8m2!3d30.4865139!4d58.4891939!15sCgpsdXQgZGVzZXJ0WgwiCmx1dCBkZXNlcnSSAQtzY2VuaWNfc3BvdJoBJENoZERTVWhOTUc5blMwVkpRMEZuU1VSdk5EVm1PR2gzUlJBQuABAA"
+                    href="https://www.google.com.ar/maps/place/K2/@35.8800039,76.5048003,15z/data=!3m1!4b1!4m5!3m4!1s0x38fad5add7ff4adb:0xc531647bf8e9d577!8m2!3d35.8799875!4d76.5151001"
                     target="_blank"
                     ><img
-                      src="https://images.unsplash.com/photo-1509316785289-025f5b846b35?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGx1dCUyMGRlc2VydHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
+                      src="https://images.unsplash.com/photo-1627896157734-4d7d4388f28b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
                       alt=""
                       class="w-20 none rounded-2xl m-auto"
                   /></a>
                   <p class="max-w-sm text-xl text-white">
-                    Su nombre en persa es Dash-e-Loot, que quiere decir "el
-                    desierto del vacío". Y aunque en cuanto a tamaño ocupa el
-                    lugar número 25, en cuestión de temperaturas es el número
-                    uno.
+                    El K2 es una montaña perteneciente a la cordillera del
+                    Karakórum, en el sistema de los Himalayas. Está a 8611 m s.
+                    n. m., y es la segunda montaña más alta de la Tierra
                   </p>
                 </div>
               </li>
@@ -304,7 +294,7 @@
           </div>
 
           <div class="back inset-0 flex flex-col">
-            <h1 class="text-4xl">Desert</h1>
+            <h1 class="text-4xl mb-1">Forest</h1>
             <p class="text-2xl">Principales Lugares</p>
             <hr class="hr-styles" />
             <ul
@@ -313,88 +303,89 @@
             >
               <li>
                 <button id="atacama_button" class="dropdown-button">
-                  Desierto de Atacama
+                  Parque Nacional de Erawan
                 </button>
                 <div id="atacama" class="grid-cols-2 hidden hover-dropdown">
                   <a
-                    href="https://www.google.com.ar/maps/place/Atacama+Desert/@-23.8633986,-69.1416039,15z/data=!3m1!4b1!4m5!3m4!1s0x96af46527fef1c47:0x34dbbb7aa8223dc!8m2!3d-23.8634189!4d-69.1328491"
+                    href="https://www.google.com.ar/maps/place/Erawan+National+Park/@14.3755014,99.1393489,17z/data=!3m1!4b1!4m5!3m4!1s0x30e476a41fbc7b15:0x54ee9cba8062c97a!8m2!3d14.3754962!4d99.1439623"
                     target="_blank"
                     ><img
-                      src="http://1.bp.blogspot.com/-ZJP900lvUlY/VhMAr7LrcxI/AAAAAAAAXgg/0ObL8eT7oCA/s1600/Desierto%2Bde%2BAtacama.jpg"
+                      src="https://images.unsplash.com/photo-1586184013696-01c5a9b2bcd7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8ZXJhd2FufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
                       alt=""
                       class="w-20 none rounded-2xl m-auto"
                   /></a>
                   <p class="max-w-sm text-xl text-white">
-                    La mayor parte del desierto está compuesto por terreno
-                    pedregoso, lagos salados (salares), arena y lava félsica que
-                    fluye hacia los Andes
+                    El parque nacional de Erawan es un área protegida que se
+                    encuentra en la provincia de Kanchanaburi, en Tailandia
+                    Central, dentro del distrito de Si Sawat
                   </p>
                 </div>
               </li>
 
               <li>
                 <button id="sahara_button" class="dropdown-button">
-                  Desierto del Sáhara
+                  Bosque encantado de Broceliande
                 </button>
                 <div
                   id="sahara"
                   class="grid-cols-2 hidden hover-dropdown transition duration-700"
                 >
                   <a
-                    href="https://www.google.com.ar/maps/place/Sahara+Desert/@21.9953015,13.0765287,5z/data=!3m1!4b1!4m5!3m4!1s0x13883b64fb267151:0xd6406bdc582d7390!8m2!3d23.4162027!4d25.66283"
+                    href="https://www.google.com.ar/maps/place/Foret+de+Paimpont/@48.0304873,-2.1429267,15z/data=!3m1!4b1!4m5!3m4!1s0x480fac84d6bfa67f:0xa0bc473da14e2ab7!8m2!3d48.030474!4d-2.132627"
                     target="_blank"
                     ><img
-                      src="https://images.unsplash.com/photo-1542916514-3e2119eefeb7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
+                      src="https://images.unsplash.com/photo-1627231314532-55a1e797a397?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDJ8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
                       alt=""
                       class="w-20 none rounded-2xl m-auto"
                   /></a>
                   <p class="max-w-sm text-xl text-white">
-                    El Sahara está delimitado al sur por el Sahel, una zona
-                    biogeográfica de 5,000 km que atraviesa el continente
-                    africano.
+                    El bosque de Broceliande es un bosque mítico francés situado
+                    en el departamento de Ille y Vilaine, en la región de
+                    Bretaña, y a unos 30 km al suroeste de Rennes
                   </p>
                 </div>
               </li>
 
               <li>
                 <button id="uyuni_button" class="dropdown-button">
-                  Desierto de Uyuni
+                  Giant Forest
                 </button>
                 <div id="uyuni" class="grid-cols-2 hidden hover-dropdown">
                   <a
-                    href="https://www.google.com.ar/maps/place/Uyuni+Salt+Flat/@-20.19362,-69.762403,8z/data=!3m1!4b1!4m5!3m4!1s0x915584b325e18bd7:0xce4183a158278b6!8m2!3d-20.1337772!4d-67.4891345"
+                    href="https://www.google.com.ar/maps/place/Giant+Forest/@36.5624609,-118.7617866,15z/data=!3m1!4b1!4m5!3m4!1s0x80955eb304745c1f:0x5de000198d9d38a4!8m2!3d36.5624446!4d-118.7514868"
                     target="_blank"
                     ><img
-                      src="https://images.unsplash.com/photo-1529801877115-8a69a227fcc0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
+                      src="https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=388&q=80"
                       alt=""
                       class="w-20 none rounded-2xl m-auto"
                   /></a>
                   <p class="max-w-sm text-xl text-white">
-                    Antes de responder esta pregunta, hay que dejar claro que el
-                    Salar de Uyuni, propiamente, es el mayor desierto de sal de
-                    la Tierra.
+                    Una de las características predominantes de este parque es
+                    el famoso bosque de las secuoyas gigantes, incluyendo al
+                    conocido General Sherman, el árbol más grande en volumen del
+                    mundo
                   </p>
                 </div>
               </li>
 
               <li>
                 <button id="lut_button" class="dropdown-button">
-                  Desierto de Lut
+                  Parque del Conguillío
                 </button>
                 <div id="lut" class="grid-cols-2 hidden hover-dropdown">
                   <a
-                    href="https://www.google.com.ar/maps/place/Lut+Desert/@32.4747705,55.1130219,7z/data=!4m9!1m2!2m1!1slut+desert!3m5!1s0x3f1d5113ac2fce6f:0x73f9d7e9c4c9843b!8m2!3d30.4865139!4d58.4891939!15sCgpsdXQgZGVzZXJ0WgwiCmx1dCBkZXNlcnSSAQtzY2VuaWNfc3BvdJoBJENoZERTVWhOTUc5blMwVkpRMEZuU1VSdk5EVm1PR2gzUlJBQuABAA"
+                    href="https://www.google.com.ar/maps/search/Conguill%C3%ADo+National+Park/@-38.6473315,-72.066117,9.5z"
                     target="_blank"
                     ><img
-                      src="https://images.unsplash.com/photo-1509316785289-025f5b846b35?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGx1dCUyMGRlc2VydHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
+                      src="https://images.unsplash.com/photo-1614178890148-6fe6af907fe6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
                       alt=""
                       class="w-20 none rounded-2xl m-auto"
                   /></a>
                   <p class="max-w-sm text-xl text-white">
-                    Su nombre en persa es Dash-e-Loot, que quiere decir "el
-                    desierto del vacío". Y aunque en cuanto a tamaño ocupa el
-                    lugar número 25, en cuestión de temperaturas es el número
-                    uno.
+                    Uno de los sectores que más atrae a los turistas es la
+                    subida a la Sierra Nevada, una alta cordillera volcánica
+                    donde se puede ver el comienzo del río Blanco, el lago
+                    Conguillío y el volcán Llaima de fondo
                   </p>
                 </div>
               </li>
@@ -408,12 +399,14 @@
     </div>
     <hr class="mt-8 w-28 mx-auto border-2 border-blue-500" />
 
-    <div class="mt-8">
+    <div class="mt-8" id="topDestinations">
       <h1 class="text-3xl text-center">Top Destinations</h1>
-      <div class="flex-col flex lg:justify-around mt-12 lg:flex-row items-center space-y-8 lg:space-y-0">
+      <div
+        class="flex-col flex lg:justify-around mt-12 lg:flex-row items-center space-y-8 lg:space-y-0"
+      >
         <!-- Top Destination 1 -->
         <div
-          class="w-60 h-16 bg-slate-400 rounded-2xl justify-start flex lg:scale-150 destination-1 cursor-pointer"
+          class="w-60 h-16 bg-slate-400 rounded-2xl justify-start flex lg:scale-150 destination-1 cursor-pointer scale-125"
         >
           <div class="w-24 img-dest1">
             <img
@@ -427,10 +420,9 @@
             <p>Boreal</p>
           </div>
         </div>
-
         <!-- Top Destination 2 -->
         <div
-          class="w-60 h-16 bg-slate-400 rounded-2xl justify-start flex lg:scale-150 destination-1 cursor-pointer"
+          class="w-60 h-16 bg-slate-400 rounded-2xl justify-start flex lg:scale-150 destination-1 cursor-pointer scale-125"
         >
           <div class="w-28 h-auto img-dest1">
             <img
@@ -447,7 +439,7 @@
 
         <!-- Top Destination 3 -->
         <div
-          class="w-60 h-16 bg-slate-400 rounded-2xl justify-start flex lg:scale-150 destination-1 cursor-pointer"
+          class="w-60 h-16 bg-slate-400 rounded-2xl justify-start flex lg:scale-150 destination-1 cursor-pointer scale-125"
         >
           <div class="w-24 img-dest1">
             <img
@@ -467,7 +459,7 @@
     <!-- Send Review -->
 
     <h1 class="text-4xl mt-10 text-center animate-pulse">Send rewiev</h1>
-    <footer class="mt-10 w-11/12 mx-auto overflow-x-hidden">
+    <footer class="mt-20 w-11/12 mx-auto overflow-x-hidden">
       <div class="flex w-20 justify-start flyAway" id="flyAway">
         <img src="/public/svg/fly.svg" alt="" class="" />
       </div>

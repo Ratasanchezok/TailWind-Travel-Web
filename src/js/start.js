@@ -15,7 +15,6 @@ const toggleVisibility = (element, siblings) => {
     siblings.forEach((sibling) => {
       sibling.style.display = 'none';
     });
-
     element.style.display = 'block';
   } else {
     element.style.display = 'none';
@@ -48,12 +47,25 @@ sendButton.addEventListener('click', sendFunction)
     },8000)
   }
 
+/* Hamburguer Function */
+
+const buttonHamburguer = document.getElementById('button-hamburguer');
+const divLista = document.getElementById('divUl');
+
+buttonHamburguer.addEventListener('click', hamburgerAction);
+
+function hamburgerAction(){
+
+  if(divLista.classList.contains("activeDivLista")){
+    divLista.classList.remove("activeDivLista")
+    buttonHamburguer.classList.add("activeArrow")
+
+  }else{
+    divLista.classList.add("activeDivLista")
+    buttonHamburguer.classList.remove("activeArrow")
+  }
+
+}
 
 
-
-
-
-
-  
-/* Permitir mandar Formulario */
 
